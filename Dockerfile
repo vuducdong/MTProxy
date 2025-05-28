@@ -3,8 +3,14 @@ FROM --platform=linux/arm64 ubuntu:20.04
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt update && \
-    apt install -y build-essential git curl libevent-dev zlib1g-dev \
-    ca-certificates && \
+    apt install -y \
+        build-essential \
+        git \
+        curl \
+        libevent-dev \
+        zlib1g-dev \
+        libssl-dev \
+        ca-certificates && \
     update-ca-certificates
 
 WORKDIR /build
